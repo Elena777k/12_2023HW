@@ -1,9 +1,13 @@
 package fizzBuzz;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class FizzBuzzTest {
     public static void main(String[] args) throws InterruptedException {
+        BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
-        FizzBuzzThread fizzBuzzThread = new FizzBuzzThread();
+        FizzBuzzThread fizzBuzzThread = new FizzBuzzThread(queue);
 
         for (int i = 1; i <= 50; i++) {
             int number = i;
@@ -22,5 +26,6 @@ public class FizzBuzzTest {
             threadD.start();
             threadD.join();
         }
+        System.out.println("queue = " + queue);
     }
 }
