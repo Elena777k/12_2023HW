@@ -28,12 +28,23 @@ public class FizzBuzzThread extends Thread{
         }
     }
 
-    public synchronized void num ( int number) {
+    public void num(int number) {
         if (number % 3 != 0 && number % 5 != 0) {
-            queue.add(String.valueOf(number));
+            queue.add(String.valueOf(number));}
+
+        String result = null;
+        try {
+            result = queue.take();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
-    }
-}
+        System.out.println(result);}
+
+
+            }
+
+
+
 
 
 

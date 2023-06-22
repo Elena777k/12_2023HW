@@ -18,14 +18,13 @@ public class FizzBuzzTest {
             Thread threadD = new Thread(() -> fizzBuzzThread.num(number));
 
             threadA.start();
-            threadA.join();
             threadB.start();
-            threadB.join();
             threadC.start();
-            threadC.join();
             threadD.start();
-            threadD.join();
+
+
         }
-        System.out.println("queue = " + queue);
+
+
     }
 }
